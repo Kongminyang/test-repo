@@ -56,9 +56,7 @@ body {
     position: relative;
     width: 60px;
     height: 120px;
-    transform-origin: bottom center;
-    animation: grow 4s ease forwards;
-    z-index: 2;
+        z-index: 2;
 }
 
 .stem {
@@ -66,9 +64,10 @@ body {
     bottom: 0;
     left: 50%;
     width: 6px;
-    height: 100px;
+        height: 0;
     background: #228B22;
     transform: translateX(-50%);
+    animation: stemGrow 2s forwards;
 }
 
 .petal {
@@ -78,51 +77,51 @@ body {
     background: red;
     border-radius: 50%;
     opacity: 0;
+    transform-origin: bottom center;
+    transform: translate(-50%, -20px) rotate(var(--angle)) scale(0);
+    animation: bloom 1s forwards 2s;
 }
 
 .center {
     position: absolute;
     top: 5px;
     left: 5px;
-@@ -76,25 +107,64 @@ body {
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    border-radius: 50
+        transform: translate(-50%, -20px) scale(0);
+    transform-origin: bottom center;
+    animation: centerBloom 1s forwards 2.5s;
 }
+.petal1 { --angle: 0deg; }
+.petal2 { --angle: 90deg; }
+.petal3 { --angle: 180deg; }
+.petal4 { --angle: 270deg; }
 
-.petal3 {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -10px) rotate(180deg);
-    animation: bloom 1s forwards 2s;
+@keyframes stemGrow {
+    from { height: 0; }
+    to { height: 100px; }
 }
-
-.petal4 {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -10px) rotate(270deg);
-    animation: bloom 1s forwards 2s;
-}
-
-@keyframes grow {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
-}
-
 @keyframes bloom {
-    from { opacity: 0; transform: scale(0); }
-    to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: translate(-50%, -20px) rotate(var(--angle)) scale(0); }
+    to { opacity: 1; transform: translate(-50%, -20px) rotate(var(--angle)) scale(1); }
 }
-
+@keyframes centerBloom {
+    from { opacity: 0; transform: translate(-50%, -20px) scale(0); }
+    to { opacity: 1; transform: translate(-50%, -20px) scale(1); }
+}
 .name {
     position: absolute;
     top: 10%;
     left: 50%;
-    transform: translateX(-50%);
+        transform: translateX(-50%);
     font-size: 2.5em;
     font-weight: bold;
     opacity: 0;
     z-index: 0;
     animation: nameFade 3s forwards 3s, nameGlow 4s ease-in-out infinite 6s;
 }
-
 @keyframes spotlight {
     from {
         opacity: 0;
@@ -133,7 +132,6 @@ body {
         transform: translateX(-50%) scale(1);
     }
 }
-
 @keyframes nameFade {
     from {
         opacity: 0;
