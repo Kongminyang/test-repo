@@ -1,22 +1,4 @@
-# High-Performer Daily
-
-A small website that provides daily AI-curated steps to help you become a greater version of yourself. Users can subscribe for $24.99 to access all content.
-The interface now features a dark blue theme and smooth animations for a more engaging experience.
-
-## Running Locally
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Start the server:
-   ```bash
-   npm start
-   ```
-3. Open <http://localhost:3000> in your browser.
-
-The subscription button is a placeholder. Integrate your preferred payment provider (e.g., Stripe) in `app.js`.
-
-## Flower and Fireworks Demo
-
-A special `flower.html` page shows a red flower blooming with fireworks in the background. Run the server as above and navigate to `http://localhost:3000/flower.html` to view it.
+# Flower and Fireworks
+This repository contains a simple animation of a red flower sprouting in a grassy field at night. Fireworks explode in the sky while a spotlight illuminates the blooming flower. A glowing dedication to **Ying Vang** appears above the scene.
+## Viewing the Animation
+Open `flower.html` directly in your browser to enjoy the animation. No server setup or external payment systems are needed.
