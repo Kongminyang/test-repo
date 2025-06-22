@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+#scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.flower {
+    position: relative;
+    width: 60px;
+    height: 120px;
+    transform-origin: bottom center;
+    animation: grow 4s ease forwards;
+}
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    height: 100px;
+    background: #228B22;
+    transform: translateX(-50%);
+}
+
+.petal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.center {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation: bloom 1s forwards 2.5s;
+}
+
+.petal1 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    animation: bloom 1s forwards 2s;
+}
+
+.petal2 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10px) rotate(90deg);
+    animation: bloom 1s forwards 2s;
+}
+
+.petal3 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10px) rotate(180deg);
+    animation: bloom 1s forwards 2s;
+}
+
+.petal4 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10px) rotate(270deg);
+    animation: bloom 1s forwards 2s;
+}
+
+@keyframes grow {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes bloom {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+}

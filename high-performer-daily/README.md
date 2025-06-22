@@ -16,3 +16,7 @@ The interface now features a dark blue theme and smooth animations for a more en
 3. Open <http://localhost:3000> in your browser.
 
 The subscription button is a placeholder. Integrate your preferred payment provider (e.g., Stripe) in `app.js`.
+
+## Flower and Fireworks Demo
+
+A special `flower.html` page shows a red flower blooming with fireworks in the background. Run the server as above and navigate to `http://localhost:3000/flower.html` to view it.
