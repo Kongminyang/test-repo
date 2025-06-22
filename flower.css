@@ -51,20 +51,17 @@ body {
     background: linear-gradient(#228B22, #1a6e1a);
     z-index: 1;
 }
-
-.flower {
-    position: relative;
-    width: 60px;
-    height: 120px;
-        z-index: 2;
+ width: 120px;
+    height: 200px;
+    z-index: 2;
 }
 
 .stem {
     position: absolute;
     bottom: 0;
     left: 50%;
-    width: 6px;
-        height: 0;
+     width: 8px;
+    height: 0;
     background: #228B22;
     transform: translateX(-50%);
     animation: stemGrow 2s forwards;
@@ -72,25 +69,26 @@ body {
 
 .petal {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    background: red;
+      width: 70px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, #ff6666, #cc0000);
     border-radius: 50%;
     opacity: 0;
     transform-origin: bottom center;
-    transform: translate(-50%, -20px) rotate(var(--angle)) scale(0);
+    transform: translate(-50%, -35px) rotate(var(--angle)) scale(0);
     animation: bloom 1s forwards 2s;
 }
 
 .center {
     position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 30px;
-    height: 30px;
-    background: yellow;
-    border-radius: 50
-        transform: translate(-50%, -20px) scale(0);
+      top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffff66, #ccaa00);
+    border-radius: 50%;
+    opacity: 0;
+     transform: translate(-50%, -35px) scale(0);
     transform-origin: bottom center;
     animation: centerBloom 1s forwards 2.5s;
 }
@@ -101,27 +99,28 @@ body {
 
 @keyframes stemGrow {
     from { height: 0; }
-    to { height: 100px; }
+    to { height: 170px; }
 }
 @keyframes bloom {
-    from { opacity: 0; transform: translate(-50%, -20px) rotate(var(--angle)) scale(0); }
-    to { opacity: 1; transform: translate(-50%, -20px) rotate(var(--angle)) scale(1); }
+    from { opacity: 0; transform: translate(-50%, -35px) rotate(var(--angle)) scale(0); }
+    to { opacity: 1; transform: translate(-50%, -35px) rotate(var(--angle)) scale(1); }
 }
 @keyframes centerBloom {
-    from { opacity: 0; transform: translate(-50%, -20px) scale(0); }
-    to { opacity: 1; transform: translate(-50%, -20px) scale(1); }
+    from { opacity: 0; transform: translate(-50%, -35px) scale(0); }
+    to { opacity: 1; transform: translate(-50%, -35px) scale(1); }
 }
 .name {
     position: absolute;
     top: 10%;
     left: 50%;
-        transform: translateX(-50%);
+    transform: translateX(-50%);
     font-size: 2.5em;
     font-weight: bold;
     opacity: 0;
     z-index: 0;
     animation: nameFade 3s forwards 3s, nameGlow 4s ease-in-out infinite 6s;
 }
+
 @keyframes spotlight {
     from {
         opacity: 0;
@@ -147,3 +146,7 @@ body {
     0%, 100% { text-shadow: 0 0 10px red; }
     50% { text-shadow: 0 0 20px yellow; }
 }
+
+
+.flower {
+    position: relative;
