@@ -9,14 +9,19 @@ let tipIndex = 0;
 
 function showNextTip() {
     const tipText = document.getElementById('tip-text');
-    tipText.textContent = tips[tipIndex];
+    tipText.classList.add('fade-out');
+    setTimeout(() => {
+        tipText.textContent = tips[tipIndex];
+        tipText.classList.remove('fade-out');
+    }, 500);
     tipIndex = (tipIndex + 1) % tips.length;
 }
 
 document.getElementById('next-btn').addEventListener('click', showNextTip);
 
-// initial tip
+// initial tip and auto-cycle
 showNextTip();
+setInterval(showNextTip, 10000);
 
 document.getElementById('subscribe-btn').addEventListener('click', () => {
     alert('Subscription placeholder - integrate payment provider here.');
