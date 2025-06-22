@@ -1,6 +1,7 @@
 # High-Performer Daily
 
 A small website that provides daily AI-curated steps to help you become a greater version of yourself. Users can subscribe for $24.99 to access all content.
+The interface now features a dark blue theme and smooth animations for a more engaging experience.
 
 ## Running Locally
 
