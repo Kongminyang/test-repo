@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+#scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    /* spotlight on the flower */
+    overflow: hidden;
+}
+
+#scene::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at center, rgba(255,255,200,0.8), rgba(255,255,200,0) 70%);
+    pointer-events: none;
+    filter: blur(30px);
+    opacity: 0;
+    animation: spotlight 4s forwards 1s;
+}
+
+#fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(#228B22, #1a6e1a);
+    z-index: 1;
+}
+
+.flower {
+    position: relative;
+    width: 60px;
+    height: 120px;
+    transform-origin: bottom center;
+    animation: grow 4s ease forwards;
+    z-index: 2;
+}
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    height: 100px;
+    background: #228B22;
+    transform: translateX(-50%);
+}
+
+.petal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.center {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+@@ -76,25 +107,64 @@ body {
+}
+
+.petal3 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10px) rotate(180deg);
+    animation: bloom 1s forwards 2s;
+}
+
+.petal4 {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -10px) rotate(270deg);
+    animation: bloom 1s forwards 2s;
+}
+
+@keyframes grow {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes bloom {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.name {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    opacity: 0;
+    z-index: 0;
+    animation: nameFade 3s forwards 3s, nameGlow 4s ease-in-out infinite 6s;
+}
+
+@keyframes spotlight {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes nameFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes nameGlow {
+    0%, 100% { text-shadow: 0 0 10px red; }
+    50% { text-shadow: 0 0 20px yellow; }
+}
