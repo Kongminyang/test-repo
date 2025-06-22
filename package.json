@@ -1,7 +1,7 @@
 {
   "name": "high-performer-daily",
   "version": "1.0.0",
-  "description": "daily guide to self improvement",
+  "description": "AI-curated daily guide to self improvement",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
